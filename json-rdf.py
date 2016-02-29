@@ -1,5 +1,5 @@
+#!/usr/bin/env python 
 """
-
 Copyright 2015, Institute e-Austria, Timisoara, Romania
     http://www.ieat.ro/
 Developers:
@@ -17,14 +17,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 """
 
-#!/usr/bin/env python 
-
 import json
 import rdflib
 from rdflib import URIRef, BNode, Literal
 from rdflib import Namespace
 from rdflib import RDF
-rdflib. 
 from rdflib.namespace import FOAF
 from rdflib import Graph
 import sys
