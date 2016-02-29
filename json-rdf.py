@@ -27,8 +27,8 @@ from rdflib import Graph
 import sys
 from pprint import pprint
 
-def readJson(filename): 
-	with open(filename) as data_file: 
+def readJson(filename):
+	with open(filename) as data_file:
 		data = json.loads(data_file.read())
 	pprint (data)
 	g = rdflib.Graph()
@@ -53,6 +53,9 @@ def printBob():
 	print g.serialize(format = 'xml')
 	
 if __name__ == '__main__':
-	print sys.argv[1]
-	readJson(sys.argv[1])
-	
+    if len(sys.argv) == 1:
+        readJson("example.json")
+    else:
+        print sys.argv[1]
+        readJson(sys.argv[1])
+

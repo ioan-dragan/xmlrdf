@@ -1,0 +1,293 @@
+<rdf:RDF
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:ems="http://open-services.net/ns/ems#"
+    xmlns:ex="http://example.org#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:qudt="http://qudt.org/vocab/unit#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:crtv="http://open-services.net/ns/crtv#"
+    xmlns:pm="http://open-services.net/ns/perfmon#"
+    xmlns:oslc="http://open-services.net/ns/core#"
+    xmlns:bp="http://open-services.net/ns/basicProfile#"
+    xmlns:dbp="http://dbpedia.org/resource/" > 
+  <rdf:Description rdf:about="http://perfmon-provider.example.org/rec001#tablefreespace35">
+    <ems:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35</ems:numericValue>
+    <ems:unitOfMeasure rdf:resource="http://dbpedia.org/resource/Percentage"/>
+    <ems:metric rdf:resource="http://open-services.net/ns/perfmon#TableSpaceFree"/>
+    <dcterms:title>%Table Space Free</dcterms:title>
+    <rdf:type rdf:resource="http://open-services.net/ns/ems#Measure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://perfmon-provider.example.org/rec001#localconnections15">
+    <ems:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</ems:numericValue>
+    <ems:unitOfMeasure rdf:resource="http://dbpedia.org/resource/Count_data"/>
+    <ems:metric rdf:resource="http://open-services.net/ns/perfmon#LocalInboundConnections"/>
+    <dcterms:title>Local Connections</dcterms:title>
+    <rdf:type rdf:resource="http://open-services.net/ns/ems#Measure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://perfmon-provider.example.org/rec001#timedbthreadpoolmaxed21">
+    <ems:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">21</ems:numericValue>
+    <ems:unitOfMeasure rdf:resource="http://dbpedia.org/resource/Percentage"/>
+    <ems:metric rdf:resource="http://open-services.net/ns/perfmon#TimeDatabaseThreadPoolExhausted"/>
+    <dcterms:title>Percentage of Time DB Thread Pool Maxed</dcterms:title>
+    <rdf:type rdf:resource="http://open-services.net/ns/ems#Measure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://perfmon-provider.example.org/rec001#hosteddbs12">
+    <ems:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</ems:numericValue>
+    <ems:unitOfMeasure rdf:resource="http://dbpedia.org/resource/Count_data"/>
+    <ems:metric rdf:resource="http://open-services.net/ns/perfmon#HostedDatabases"/>
+    <dcterms:title>Number of hosted databases</dcterms:title>
+    <rdf:type rdf:resource="http://open-services.net/ns/ems#Measure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://perfmon-provider.example.org/rec001#postgcfreemem32">
+    <ems:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">32</ems:numericValue>
+    <ems:unitOfMeasure rdf:resource="http://dbpedia.org/resource/Percentage"/>
+    <ems:metric rdf:resource="http://open-services.net/ns/perfmon#MemoryAvailableAfterGarbageCollection"/>
+    <dcterms:title>Percentage Free Memory After Garbage Collection</dcterms:title>
+    <rdf:type rdf:resource="http://open-services.net/ns/ems#Measure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://perfmon-provider.example.org/rec001#requestfailurerate1339.2">
+    <ems:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1339.2</ems:numericValue>
+    <ems:unitOfMeasure rdf:resource="http://qudt.org/vocab/unit#PerSecond"/>
+    <ems:metric rdf:resource="http://open-services.net/ns/perfmon#RequestMetrics"/>
+    <dcterms:title>Request Rate Per Second</dcterms:title>
+    <rdf:type rdf:resource="http://open-services.net/ns/ems#Measure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://perfmon-provider.example.org/rec001#requestfailurecount45911">
+    <ems:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">45911</ems:numericValue>
+    <ems:unitOfMeasure rdf:resource="http://dbpedia.org/resource/Count_data"/>
+    <ems:metric rdf:resource="http://open-services.net/ns/perfmon#RequestFailures"/>
+    <dcterms:title>Request Failure Count</dcterms:title>
+    <rdf:type rdf:resource="http://open-services.net/ns/ems#Measure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://perfmon-provider.example.org/rec001#logused87">
+    <ems:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">87</ems:numericValue>
+    <ems:unitOfMeasure rdf:resource="http://dbpedia.org/resource/Percentage"/>
+    <ems:metric rdf:resource="http://open-services.net/ns/perfmon#LogUsed"/>
+    <dcterms:title>%Log Used</dcterms:title>
+    <rdf:type rdf:resource="http://open-services.net/ns/ems#Measure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://perfmon-provider.example.org/rec001#hidepthqueuecount76">
+    <ems:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">76</ems:numericValue>
+    <ems:unitOfMeasure rdf:resource="http://dbpedia.org/resource/Count_data"/>
+    <ems:metric rdf:resource="http://open-services.net/ns/perfmon#HighDepthQueueCount"/>
+    <dcterms:title>High Depth Queue Count</dcterms:title>
+    <rdf:type rdf:resource="http://open-services.net/ns/ems#Measure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://perfmon-provider.example.org/rec001#resptime4.500">
+    <ems:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.500</ems:numericValue>
+    <ems:unitOfMeasure rdf:resource="http://qudt.org/vocab/unit#SecondTime"/>
+    <ems:metric rdf:resource="http://open-services.net/ns/perfmon#ResponseTimeMetrics"/>
+    <dcterms:title>Response Time</dcterms:title>
+    <rdf:type rdf:resource="http://open-services.net/ns/ems#Measure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://perfmon-provider.example.org/rec001#networkerrors2">
+    <ems:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ems:numericValue>
+    <ems:unitOfMeasure rdf:resource="http://dbpedia.org/resource/Percentage"/>
+    <ems:metric rdf:resource="http://open-services.net/ns/perfmon#NetworkIOErrors"/>
+    <dcterms:title>Percentage of I/O requests with errors, sent or received</dcterms:title>
+    <rdf:type rdf:resource="http://open-services.net/ns/ems#Measure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://perfmon-provider.example.org/rec001#garbagecollectioncount72787723">
+    <ems:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">72787723</ems:numericValue>
+    <ems:unitOfMeasure rdf:resource="http://dbpedia.org/resource/Count_data"/>
+    <ems:metric rdf:resource="http://open-services.net/ns/perfmon#GarbageCollectionRequests"/>
+    <dcterms:title>Garbage Collection Count</dcterms:title>
+    <rdf:type rdf:resource="http://open-services.net/ns/ems#Measure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://perfmon-provider.example.org/rec001#virtmemutil50">
+    <ems:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</ems:numericValue>
+    <ems:unitOfMeasure rdf:resource="http://dbpedia.org/resource/Percentage"/>
+    <ems:metric rdf:resource="http://open-services.net/ns/perfmon#VirtualMemoryUsed"/>
+    <dcterms:title>Virtual Memory Utilization</dcterms:title>
+    <rdf:type rdf:resource="http://open-services.net/ns/ems#Measure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://perfmon-provider.example.org/rec001#queuedepth150">
+    <ems:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">150</ems:numericValue>
+    <ems:unitOfMeasure rdf:resource="http://dbpedia.org/resource/Count_data"/>
+    <ems:metric rdf:resource="http://open-services.net/ns/perfmon#QueueDepth"/>
+    <dcterms:title>Queue depth</dcterms:title>
+    <rdf:type rdf:resource="http://open-services.net/ns/ems#Measure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://perfmon-provider.example.org/rec001#nummsgsontransqueue16788">
+    <ems:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16788</ems:numericValue>
+    <ems:unitOfMeasure rdf:resource="http://dbpedia.org/resource/Count_data"/>
+    <ems:metric rdf:resource="http://open-services.net/ns/perfmon#MessageCount"/>
+    <dcterms:title>Number of messages on transmission queues</dcterms:title>
+    <rdf:type rdf:resource="http://open-services.net/ns/ems#Measure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://perfmon-provider.example.org/rec001#avgrequestfailurerate25.3">
+    <ems:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">25.3</ems:numericValue>
+    <ems:unitOfMeasure rdf:resource="http://open-services.net/ns/perfmon#PerMinute"/>
+    <ems:metric rdf:resource="http://open-services.net/ns/perfmon#AvgRequestFailures"/>
+    <dcterms:title>Request Failure Rate Per Minute</dcterms:title>
+    <rdf:type rdf:resource="http://open-services.net/ns/ems#Measure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://perfmon-provider.example.org/rec001#tablespaceused50">
+    <ems:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</ems:numericValue>
+    <ems:unitOfMeasure rdf:resource="http://dbpedia.org/resource/Percentage"/>
+    <ems:metric rdf:resource="http://open-services.net/ns/perfmon#TableSpaceUsed"/>
+    <dcterms:title>%Table space used</dcterms:title>
+    <rdf:type rdf:resource="http://open-services.net/ns/ems#Measure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://perfmon-provider.example.org/rec001#timethreadpoolmaxed02">
+    <ems:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ems:numericValue>
+    <ems:unitOfMeasure rdf:resource="http://dbpedia.org/resource/Percentage"/>
+    <ems:metric rdf:resource="http://open-services.net/ns/perfmon#TimeThreadPoolExhausted"/>
+    <dcterms:title>Percentage of Time Thread Pool Maxed</dcterms:title>
+    <rdf:type rdf:resource="http://open-services.net/ns/ems#Measure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://perfmon-provider.example.org/rec001#sortoverflows20">
+    <ems:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</ems:numericValue>
+    <ems:unitOfMeasure rdf:resource="http://dbpedia.org/resource/Percentage"/>
+    <ems:metric rdf:resource="http://open-services.net/ns/perfmon#SortOverflows"/>
+    <dcterms:title>%Sort overflows</dcterms:title>
+    <rdf:type rdf:resource="http://open-services.net/ns/ems#Measure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://perfmon-provider.example.org/rec001#remoteconnections1145">
+    <ems:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1145</ems:numericValue>
+    <ems:unitOfMeasure rdf:resource="http://dbpedia.org/resource/Count_data"/>
+    <ems:metric rdf:resource="http://open-services.net/ns/perfmon#RemoteInboundConnections"/>
+    <dcterms:title>Remote Connections</dcterms:title>
+    <rdf:type rdf:resource="http://open-services.net/ns/ems#Measure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://perfmon-provider.example.org/rec001#timejcathreadpoolmaxed05">
+    <ems:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</ems:numericValue>
+    <ems:unitOfMeasure rdf:resource="http://dbpedia.org/resource/Percentage"/>
+    <ems:metric rdf:resource="http://open-services.net/ns/perfmon#TimeJCAThreadPoolExhausted"/>
+    <dcterms:title>Percentage of Time JCA Thread Pool Maxed</dcterms:title>
+    <rdf:type rdf:resource="http://open-services.net/ns/ems#Measure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://perfmon-provider.example.org/rec001#cpuutil10">
+    <ems:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</ems:numericValue>
+    <ems:unitOfMeasure rdf:resource="http://dbpedia.org/resource/Percentage"/>
+    <ems:metric rdf:resource="http://open-services.net/ns/perfmon#CpuUsed"/>
+    <dcterms:title>CPU Utilization</dcterms:title>
+    <rdf:type rdf:resource="http://open-services.net/ns/ems#Measure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://perfmon-provider.example.org/rec001#locklistused30">
+    <ems:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</ems:numericValue>
+    <ems:unitOfMeasure rdf:resource="http://dbpedia.org/resource/Percentage"/>
+    <ems:metric rdf:resource="http://open-services.net/ns/perfmon#LockListUsed"/>
+    <dcterms:title>%Lock list used</dcterms:title>
+    <rdf:type rdf:resource="http://open-services.net/ns/ems#Measure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://perfmon-provider.example.org/rec001#avgloginfailsperminute2.4">
+    <ems:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.4</ems:numericValue>
+    <ems:unitOfMeasure rdf:resource="http://open-services.net/ns/perfmon#PerMinute"/>
+    <ems:metric rdf:resource="http://open-services.net/ns/perfmon#AvgLoginRequestFailures"/>
+    <dcterms:title>Average Login Request Failures Per Minute</dcterms:title>
+    <rdf:type rdf:resource="http://open-services.net/ns/ems#Measure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://perfmon-provider.example.org/rec001#cpuspeed1024">
+    <ems:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1024</ems:numericValue>
+    <ems:unitOfMeasure rdf:resource="http://qudt.org/vocab/unit#MegaHertz"/>
+    <ems:metric rdf:resource="http://open-services.net/ns/perfmon#CpuSpeed"/>
+    <dcterms:title>CPU Speed</dcterms:title>
+    <rdf:type rdf:resource="http://open-services.net/ns/ems#Measure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://perfmon-provider.example.org/rec001#diskspace50">
+    <ems:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</ems:numericValue>
+    <ems:unitOfMeasure rdf:resource="http://dbpedia.org/resource/Percentage"/>
+    <ems:metric rdf:resource="http://open-services.net/ns/perfmon#DiskSpaceUsed"/>
+    <dcterms:title>Percentage Disk Space Used</dcterms:title>
+    <rdf:type rdf:resource="http://open-services.net/ns/ems#Measure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://perfmon-provider.example.org/rec001#diskovercommit150">
+    <ems:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">150</ems:numericValue>
+    <ems:unitOfMeasure rdf:resource="http://dbpedia.org/resource/Percentage"/>
+    <ems:metric rdf:resource="http://open-services.net/ns/perfmon#DiskSpaceOverCommitAmount"/>
+    <dcterms:title>Percentage by which space allocated over-commits a Disk</dcterms:title>
+    <rdf:type rdf:resource="http://open-services.net/ns/ems#Measure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://perfmon-provider.example.org/rec001">
+    <ems:observes rdf:resource="http://perfmon-provider.example.org/rec001#bufferpoolhits13"/>
+    <rdf:type rdf:resource="http://open-services.net/ns/perfmon#PerformanceMonitoringRecord"/>
+    <ems:observes rdf:resource="http://perfmon-provider.example.org/rec001#logused87"/>
+    <ems:observes rdf:resource="http://perfmon-provider.example.org/rec001#sortoverflows20"/>
+    <ems:observes rdf:resource="http://perfmon-provider.example.org/rec001#locklistused30"/>
+    <ems:observes rdf:resource="http://perfmon-provider.example.org/rec001#requestfailurecount45911"/>
+    <ems:observes rdf:resource="http://perfmon-provider.example.org/rec001#tablespaceused50"/>
+    <ex:fooBar rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</ex:fooBar>
+    <ems:observes rdf:resource="http://perfmon-provider.example.org/rec001#avgjmsgettime3.000"/>
+    <ems:observes rdf:resource="http://perfmon-provider.example.org/rec001#remoteconnections1145"/>
+    <ems:observes rdf:resource="http://perfmon-provider.example.org/rec001#avgrequestfailurerate25.3"/>
+    <ems:observes rdf:resource="http://perfmon-provider.example.org/rec001#queuedepth150"/>
+    <ems:observes rdf:resource="http://perfmon-provider.example.org/rec001#cpuspeed1024"/>
+    <ems:observes rdf:resource="http://perfmon-provider.example.org/rec001#timethreadpoolmaxed02"/>
+    <ems:observes rdf:resource="http://perfmon-provider.example.org/rec001#vmcpuready56"/>
+    <ems:observes rdf:resource="http://perfmon-provider.example.org/rec001#requestfailurerate1339.2"/>
+    <ex:aLocalTime>2002-05-30T09:30:10.5</ex:aLocalTime>
+    <ems:observes rdf:resource="http://perfmon-provider.example.org/rec001#localconnections15"/>
+    <ems:observes rdf:resource="http://perfmon-provider.example.org/rec001#queuefull10"/>
+    <ems:observes rdf:resource="http://perfmon-provider.example.org/rec001#hosteddbs12"/>
+    <ems:observes rdf:resource="http://perfmon-provider.example.org/rec001#postgcfreemem32"/>
+    <dcterms:isPartOf rdf:resource="http://perfmon-provider.example.org/recCS001"/>
+    <ems:observes rdf:resource="http://perfmon-provider.example.org/rec001#timedbthreadpoolmaxed21"/>
+    <ems:observes rdf:resource="http://perfmon-provider.example.org/rec001#timejcathreadpoolmaxed05"/>
+    <ems:observes rdf:resource="http://perfmon-provider.example.org/rec001#heapspace52"/>
+    <ems:observes rdf:resource="http://perfmon-provider.example.org/rec001#virtmemutil50"/>
+    <ems:observes rdf:resource="http://perfmon-provider.example.org/rec001#diskovercommit150"/>
+    <ems:observes rdf:resource="http://perfmon-provider.example.org/rec001#garbagecollectioncount72787723"/>
+    <ems:observes rdf:resource="http://perfmon-provider.example.org/rec001#diskspace50"/>
+    <ems:observes rdf:resource="http://perfmon-provider.example.org/rec001#cpuutil10"/>
+    <ems:observes rdf:resource="http://perfmon-provider.example.org/rec001#nummsgsontransqueue16788"/>
+    <ems:observes rdf:resource="http://perfmon-provider.example.org/rec001#realmemutil50"/>
+    <ems:observes rdf:resource="http://perfmon-provider.example.org/rec001#hidepthqueuecount76"/>
+    <dcterms:date>2012-06-13T19:48:09.5Z</dcterms:date>
+    <ems:observes rdf:resource="http://perfmon-provider.example.org/rec001#networkerrors2"/>
+    <ems:observes rdf:resource="http://perfmon-provider.example.org/rec001#avgloginfailsperminute2.4"/>
+    <ems:observes rdf:resource="http://perfmon-provider.example.org/rec001#sqlnumfailedstmts310"/>
+    <ems:observes rdf:resource="http://perfmon-provider.example.org/rec001#tablefreespace35"/>
+    <ems:observes rdf:resource="http://perfmon-provider.example.org/rec001#resptime4.500"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://perfmon-provider.example.org/rec001#bufferpoolhits13">
+    <ems:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">13</ems:numericValue>
+    <ems:unitOfMeasure rdf:resource="http://dbpedia.org/resource/Percentage"/>
+    <ems:metric rdf:resource="http://open-services.net/ns/perfmon#BufferPoolHits"/>
+    <dcterms:title>Buffer Pool Hit Ratio</dcterms:title>
+    <rdf:type rdf:resource="http://open-services.net/ns/ems#Measure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://perfmon-provider.example.org/rec001#sqlnumfailedstmts310">
+    <ems:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">310</ems:numericValue>
+    <ems:unitOfMeasure rdf:resource="http://dbpedia.org/resource/Count_data"/>
+    <ems:metric rdf:resource="http://open-services.net/ns/perfmon#SqlStatmentFailures"/>
+    <dcterms:title>Number of failed SQL Statements</dcterms:title>
+    <rdf:type rdf:resource="http://open-services.net/ns/ems#Measure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://perfmon-provider.example.org/rec001#queuefull10">
+    <ems:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</ems:numericValue>
+    <ems:unitOfMeasure rdf:resource="http://dbpedia.org/resource/Percentage"/>
+    <ems:metric rdf:resource="http://open-services.net/ns/perfmon#QueueFull"/>
+    <dcterms:title>%Queue full</dcterms:title>
+    <rdf:type rdf:resource="http://open-services.net/ns/ems#Measure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://perfmon-provider.example.org/rec001#heapspace52">
+    <ems:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">52</ems:numericValue>
+    <ems:unitOfMeasure rdf:resource="http://dbpedia.org/resource/Percentage"/>
+    <ems:metric rdf:resource="http://open-services.net/ns/perfmon#HeapMemoryUsed"/>
+    <dcterms:title>Heap Usage</dcterms:title>
+    <rdf:type rdf:resource="http://open-services.net/ns/ems#Measure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://perfmon-provider.example.org/rec001#vmcpuready56">
+    <ems:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">56</ems:numericValue>
+    <ems:unitOfMeasure rdf:resource="http://dbpedia.org/resource/Percentage"/>
+    <ems:metric rdf:resource="http://open-services.net/ns/perfmon#VmCpuReady"/>
+    <dcterms:title>VM CPU Percent Ready</dcterms:title>
+    <rdf:type rdf:resource="http://open-services.net/ns/ems#Measure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://perfmon-provider.example.org/rec001#avgjmsgettime3.000">
+    <ems:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.000</ems:numericValue>
+    <ems:unitOfMeasure rdf:resource="http://qudt.org/vocab/unit#SecondTime"/>
+    <ems:metric rdf:resource="http://open-services.net/ns/perfmon#AvgJmsGetTime"/>
+    <dcterms:title>Average JMS Get Time</dcterms:title>
+    <rdf:type rdf:resource="http://open-services.net/ns/ems#Measure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://perfmon-provider.example.org/rec001#realmemutil50">
+    <ems:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</ems:numericValue>
+    <ems:unitOfMeasure rdf:resource="http://dbpedia.org/resource/Percentage"/>
+    <ems:metric rdf:resource="http://open-services.net/ns/perfmon#RealMemoryUsed"/>
+    <dcterms:title>Real Memory Utilization</dcterms:title>
+    <rdf:type rdf:resource="http://open-services.net/ns/ems#Measure"/>
+  </rdf:Description>
+</rdf:RDF>
