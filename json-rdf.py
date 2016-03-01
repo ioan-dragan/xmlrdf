@@ -30,8 +30,7 @@ from pprint import pprint
 def readJson(filename):
         with open(filename) as data_file: 
 		data = json.loads(data_file.read())
-	pprint (data)
-        
+                
         dcterms = rdflib.Namespace("http://purl.org/dc/terms/")
         namespace_manager = NamespaceManager(Graph())
 
@@ -47,17 +46,34 @@ def readJson(filename):
         oslc = rdflib.Namespace("http://open-services.net/ns/core#")
         bp = rdflib.Namespace("http://open-services.net/ns/basicProfile#")
         dbp = rdflib.Namespace("http://dbpedia.org/resource/")
+
+        jsonUsefulData = data['hits']['hits']
+        g = Graph()
         
-        namespace_manager.bind('dcterms', dcterms)
-        counter = 0 
-	g = Graph()
-        g.namespace_manager = namespace_manager
-        g.bind("pm", pm)
-        g.resource(dcterms)
-        g.resource(rdf)
+        for d in jsonUsefulData: 
+                if d['_source']['plugin'] == 'load':
+                        print d['_source']['shortterm']
+                        print d['_source']['longterm']
+                        print d['_source']['midterm']
+                elif d['_source']['plugin'] == 'interface':
+                        print d['_source']['rx']
+                        print d['_source']['tx']
+                elif d['_source']['plugin'] == 'cpu':
+                        print "CPU DATA"
+                        g.add( ( rdflib.URIRef('cpu') , pm.CpuUsed, rdflib.Literal(d['_source']['value']) ))
+                        print d['_source']['value']
+                        print d['_source']['plugin_instance']
+                        print d['_source']['type_instance']
+                        print "end CPU data"
+                else:
+                        print d['_source']['value']
+                        print d['_source']['type_instance']
+
         
-        u = URIRef(u'http://example.com/foo')
-	g.resource(u)
+        print g.serialize(format = 'xml')
+
+        
+def dummy():
         for maps in data['maps']: 
 		#get in the maps and collect attributes 
 		for i in maps:
