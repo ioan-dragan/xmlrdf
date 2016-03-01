@@ -20,26 +20,49 @@ limitations under the License.
 import json
 import rdflib
 from rdflib import URIRef, BNode, Literal
-from rdflib import Namespace
-from rdflib import RDF
+from rdflib.namespace import Namespace, NamespaceManager
+from rdflib import RDFS
 from rdflib.namespace import FOAF
 from rdflib import Graph
 import sys
 from pprint import pprint
 
-def readJson(filename): 
-	with open(filename) as data_file: 
+def readJson(filename):
+        with open(filename) as data_file: 
 		data = json.loads(data_file.read())
 	pprint (data)
-	g = rdflib.Graph()
-	
-	counter = 0 
-	for maps in data['maps']: 
+        
+        dcterms = rdflib.Namespace("http://purl.org/dc/terms/")
+        namespace_manager = NamespaceManager(Graph())
+
+        rdf = rdflib.Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#")
+        ems = rdflib.Namespace("http://open-services.net/ns/ems#")
+        ex = rdflib.Namespace("http://example.org#")
+        xsd = rdflib.Namespace("http://www.w3.org/2001/XMLSchema#")
+        qudt = rdflib.Namespace("http://qudt.org/vocab/unit#")
+        
+        rdfs = rdflib.Namespace("http://www.w3.org/2000/01/rdf-schema#")
+        crtv = rdflib.Namespace("http://open-services.net/ns/crtv#")
+        pm = rdflib.Namespace("http://open-services.net/ns/perfmon#")
+        oslc = rdflib.Namespace("http://open-services.net/ns/core#")
+        bp = rdflib.Namespace("http://open-services.net/ns/basicProfile#")
+        dbp = rdflib.Namespace("http://dbpedia.org/resource/")
+        
+        namespace_manager.bind('dcterms', dcterms)
+        counter = 0 
+	g = Graph()
+        g.namespace_manager = namespace_manager
+        g.bind("pm", pm)
+        g.resource(dcterms)
+        g.resource(rdf)
+        
+        u = URIRef(u'http://example.com/foo')
+	g.resource(u)
+        for maps in data['maps']: 
 		#get in the maps and collect attributes 
 		for i in maps:
-			g.add( (rdflib.URIRef('maps.'+str(counter)), rdflib.RDFS.label, rdflib.Literal(i) ) ) 
-			g.add( (rdflib.URIRef('maps.'+str(counter)), rdflib.RDFS.label, rdflib.Literal(maps[i]) ) ) 
-		counter= counter+1
+ 			g.add( (rdflib.URIRef('maps.'+str(counter)), pm.AvgLoginRequestFailures, rdflib.Literal(i) ) ) 
+                counter= counter+1
 		print len(maps)
 
 	#g.add((rdflib.URIRef('maps:id'), rdflib.RDFS.label, rdflib.Literal('id')))
