@@ -60,7 +60,11 @@ def readJson(filename):
                         print d['_source']['tx']
                 elif d['_source']['plugin'] == 'cpu':
                         print "CPU DATA"
-                        g.add( ( rdflib.URIRef('cpu') , pm.CpuUsed, rdflib.Literal(d['_source']['value']) ))
+                        cpu = BNode()
+                        g.add( (rdflib.URIRef('cpu'), RDFS.label, rdflib.Literal('cpu')) )
+                        g.add( (cpu, RDFS.label, rdflib.Literal('cpu metric')) )
+                        g.add( (cpu, pm.CpuUsed, rdflib.Literal(d['_source']['value'])) )
+                        
                         print d['_source']['value']
                         print d['_source']['plugin_instance']
                         print d['_source']['type_instance']
