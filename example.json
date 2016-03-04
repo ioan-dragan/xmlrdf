@@ -1,10 +1,50 @@
 {
- "maps":[
-         {"id":"blabla","iscategorical":"0"},
-         {"id":"blabla","iscategorical":"0"}
-        ],
-"masks": {"id":"valore"},
-"om_points":"value",
-"parameters":
-         {"id":"valore"}
+  "took": 2908,
+  "hits": {
+    "hits": [
+      {
+        "_index": "logstash-2016.02.13",
+        "_type": "collectd",
+        "_id": "AVLbDs9x9v8MnzLMkRf7",
+        "_score": 1,
+        "_source": {
+          "host": "dice.cdh.slave1",
+          "@timestamp": "2016-02-13T14:35:16.000Z",
+          "plugin": "cpu",
+          "plugin_instance": "2",
+          "collectd_type": "cpu",
+          "type_instance": "idle",
+          "value": 74528326,
+          "@version": "1",
+          "type": "collectd"
+        },
+        "fields": {
+          "@timestamp": [
+            1455374116000
+          ]
+        }
+      },
+      {
+        "_index": "logstash-2016.02.13",
+        "_type": "collectd",
+        "_id": "AVLbDtCG9v8MnzLMkRf8",
+        "_score": 1,
+        "_source": {
+          "host": "dice.cdh.slave1",
+          "@timestamp": "2016-02-13T14:35:16.000Z",
+          "plugin": "cpu",
+          "plugin_instance": "2",
+          "collectd_type": "cpu",
+          "type_instance": "wait",
+          "value": 464793,
+          "@version": "1",
+          "type": "collectd"
+        },
+        "fields": {
+          "@timestamp": [
+            1455374116000
+          ]
+        }
+      }]
+  }
 }

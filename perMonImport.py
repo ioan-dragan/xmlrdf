@@ -17,20 +17,23 @@ def elasticJson(filePath):
         print n['_type']
         print n['_source']
         print n['_source']['plugin']
-        print n['_source']['@timestamp']
 
         if n['_source']['plugin'] == 'load':
+            print 'Load timestamp ' + n['_source']['@timestamp']
             print n['_source']['shortterm']
             print n['_source']['longterm']
             print n['_source']['midterm']
         elif n['_source']['plugin'] == 'interface':
+            print 'Interface timestamp ' + n['_source']['@timestamp']
             print n['_source']['rx']
             print n['_source']['tx']
         elif n['_source']['plugin'] == 'cpu':
+            print 'CPU timestamp ' + n['_source']['@timestamp']
             print n['_source']['value']
             print n['_source']['plugin_instance']
             print n['_source']['type_instance']
         else:
+            print 'Memory timestamp ' + n['_source']['@timestamp']
             print n['_source']['value']
             print n['_source']['type_instance']
 
