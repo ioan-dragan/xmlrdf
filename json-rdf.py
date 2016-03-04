@@ -73,6 +73,7 @@ def readJson(filename):
             print "end CPU data"
         else:
             print d['_source']['value']
+            print d['source']
             print d['_source']['type_instance']
 
 
