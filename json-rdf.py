@@ -4,6 +4,7 @@ Copyright 2015, Institute e-Austria, Timisoara, Romania
     http://www.ieat.ro/
 Developers:
  * Ioan Dragan, idragan@ieat.ro
+ * Gabriel Iuhasz, iuhasz.gabriel@info.uvt.ro
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
