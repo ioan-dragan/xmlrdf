@@ -52,4 +52,4 @@ def exampleRDF(filePath, format='xml'):
 if __name__ == '__main__':
     elasticJson("systemmetrics.json")
 
-    # exampleRDF("20130128-PerfMonRec-001.rdf")
+    #exampleRDF("20130128-PerfMonRec-001.rdf")

@@ -21,11 +21,10 @@ import json
 import rdflib
 from rdflib import URIRef, BNode, Literal
 from rdflib.namespace import Namespace, NamespaceManager
-from rdflib import RDFS
-from rdflib.namespace import FOAF
+from rdflib import RDFS, XSD
 from rdflib import Graph
 import sys
-from pprint import pprint
+
 
 
 
@@ -36,12 +35,13 @@ def readJson(filename):
 
 
     dcterms = rdflib.Namespace("http://purl.org/dc/terms/")
-    namespace_manager = NamespaceManager(Graph())
+    #namespace_manager = NamespaceManager(Graph())
     rdf = rdflib.Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#")
     ems = rdflib.Namespace("http://open-services.net/ns/ems#")
     ex = rdflib.Namespace("http://example.org#")
     xsd = rdflib.Namespace("http://www.w3.org/2001/XMLSchema#")
     qudt = rdflib.Namespace("http://qudt.org/vocab/unit#")
+    dcterms = rdflib.Namespace("http://purl.org/dc/terms/")
 
     rdfs = rdflib.Namespace("http://www.w3.org/2000/01/rdf-schema#")
     crtv = rdflib.Namespace("http://open-services.net/ns/crtv#")
@@ -52,7 +52,9 @@ def readJson(filename):
 
     nestedData = data['hits']['hits']
     g = Graph()
-
+    g.bind('ems', ems)
+    g.bind('dcterms', dcterms)
+    counter = 0
     for d in nestedData:
         if d['_source']['plugin'] == 'load':
             print d['_source']['shortterm']
@@ -63,11 +65,14 @@ def readJson(filename):
             print d['_source']['tx']
         elif d['_source']['plugin'] == 'cpu':
             print 'CPU Data'
-            cpu = BNode()
-            g.add((rdflib.URIRef('cpu'), RDFS.label, rdflib.Literal('cpu')))
-            g.add((cpu, RDFS.label, rdflib.Literal('cpu metric')))
-            g.add((cpu, pm.CpuUsed, rdflib.Literal(d['_source']['value'])))
-
+            cpu = URIRef('http://perfmon-provider.example.org/rec001#cpuutil' + str(d['_source']['value']))
+            g.add((rdflib.URIRef('http://perfmon-provider.example.org/rec001#cpuutil10'), RDFS.label, rdflib.Literal('CPU Utilization')))
+            g.add((cpu, ems.numericValue, rdflib.Literal(d['_source']['value'])))
+            g.add((cpu, ems.unitOfMeasure, rdflib.URIRef('http://dbpedia.org/resource/Percentage')))
+            g.add((cpu, ems.metric, rdflib.URIRef('http://open-services.net/ns/perfmon#CpuUsed')))
+            g.add((cpu, dcterms.title, rdflib.Literal('CPU Utilization')))
+            g.add((cpu, rdf.type, rdflib.URIRef('http://open-services.net/ns/ems#Measure')))
+            #g.add((cpu, rdf.type, rdflib.Literal(d['_source']['@timestamp'], datatype=XSD.data)))
             print d['_source']['value']
             print d['_source']['plugin_instance']
             print d['_source']['type_instance']
@@ -75,6 +80,7 @@ def readJson(filename):
         else:
             print d['_source']['value']
             print d['_source']['type_instance']
+        counter += 1
 
     print g.serialize(format='xml')
 
