@@ -45,14 +45,17 @@ def readJson(filename):
     rdfs = rdflib.Namespace("http://www.w3.org/2000/01/rdf-schema#")
     crtv = rdflib.Namespace("http://open-services.net/ns/crtv#")
     pm = rdflib.Namespace("http://open-services.net/ns/perfmon#")
+
     oslc = rdflib.Namespace("http://open-services.net/ns/core#")
     bp = rdflib.Namespace("http://open-services.net/ns/basicProfile#")
     dbp = rdflib.Namespace("http://dbpedia.org/resource/")
 
     jsonUsefulData = data['hits']['hits']
     g = Graph()
-
+    g.bind('ems',pm)
+    counter = 0
     for d in jsonUsefulData:
+        counter = counter + 1
         if d['_source']['plugin'] == 'load':
             print d['_source']['shortterm']
             print d['_source']['longterm']
@@ -62,10 +65,13 @@ def readJson(filename):
             print d['_source']['tx']
         elif d['_source']['plugin'] == 'cpu':
             print "CPU DATA"
-            cpu = BNode()
+            cpu = BNode('bar')
             g.add( (rdflib.URIRef('cpu'), RDFS.label, rdflib.Literal('cpu')) )
             g.add( (cpu, RDFS.label, rdflib.Literal('cpu metric')) )
-            g.add( (cpu, pm.CpuUsed, rdflib.Literal(d['_source']['value'])) )
+            message = rdflib.URIRef('this is about'+str(counter))
+
+            g.add( (message, pm.CpuUsed, rdflib.Literal(d['_source']['value'])) )
+            g.add( (message, pm.ResponseTime, rdflib.Literal(d['_source']['@timestamp'])))
 
             print d['_source']['value']
             print d['_source']['plugin_instance']
