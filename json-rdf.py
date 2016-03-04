@@ -31,7 +31,7 @@ from pprint import pprint
 def readJson(filename):
     with open(filename) as data_file:
         data = json.loads(data_file.read())
-    pprint(data)
+    #pprint(data)
     g = rdflib.Graph()
 
     dcterms = rdflib.Namespace("http://purl.org/dc/terms/")
@@ -50,6 +50,7 @@ def readJson(filename):
 
     counter = 0
     for maps in data['maps']:
+        print maps
         #get in the maps and collect attributes
         for i in maps:
             g.add((rdflib.URIRef('maps.'+str(counter)), rdflib.RDFS.label, rdflib.Literal(i)))
