@@ -22,8 +22,7 @@ import json
 import rdflib
 from rdflib import URIRef, BNode, Literal
 from rdflib.namespace import Namespace, NamespaceManager
-from rdflib import RDFS
-from rdflib.namespace import FOAF
+from rdflib import RDFS, XSD
 from rdflib import Graph
 import sys
 from pprint import pprint
@@ -68,10 +67,13 @@ def readJson(filename):
             cpu = BNode('bar')
             g.add( (rdflib.URIRef('cpu'), RDFS.label, rdflib.Literal('cpu')) )
             g.add( (cpu, RDFS.label, rdflib.Literal('cpu metric')) )
+
             message = rdflib.URIRef('this is about'+str(counter))
+            msg = 'some other message'+str(counter)
+            g.add( (message, RDFS.label, rdflib.Literal(msg)) )
 
             g.add( (message, pm.CpuUsed, rdflib.Literal(d['_source']['value'])) )
-            g.add( (message, pm.ResponseTime, rdflib.Literal(d['_source']['@timestamp'])))
+            g.add( (message, pm.ResponseTime, rdflib.Literal(d['_source']['@timestamp'], datatype = XSD.date)))
 
             print d['_source']['value']
             print d['_source']['plugin_instance']
